@@ -1,17 +1,177 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<ion-header >
+
+    <ion-toolbar  align-title="left">
+        <button ion-button left menuToggle>
+          <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>
+        </button>
+        <ion-title>CampusKonekt</ion-title>
+
+        <!-- Button for testing the login page -->
+        <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon class="icon ion-home custom-icon" name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <!-- <ion-buttons end (click)="openSettings()">
+            <button ion-button icon-only>
+              <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons> -->
+  
+        <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon class="icon ion-home custom-icon" name="notifications-outline"></ion-icon>
+              <ion-badge color="light" >5</ion-badge>
+            </button>
+        </ion-buttons>
+
+      </ion-toolbar>
+  
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+
+  <!-- Post Card -->
+  <ion-card>
+        <ion-item>
+            <!-- <ion-icon name="contact"></ion-icon> -->
+            <ion-icon name="contact" item-start large></ion-icon>
+            <ion-textarea placeholder="What have you got?"></ion-textarea>
+            <ion-icon name="md-add-circle" item-end></ion-icon>
+        </ion-item>
+
+  </ion-card>
+
+
+
+  <!-- <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img >
+        </ion-avatar>
+        <textarea [(ngModel)]="test" class="addContectfield" type="text" placeholder="What have you got?"></textarea>
+  
+        <ion-fab right style="margin-right:0px!important">
+          <button ion-fab mini color="dark">
+            <ion-icon name="ios-add-outline"></ion-icon>
+          </button>
+          <ion-fab-list side="left">
+            <button ion-fab mini color="yellowfab" (click)="shareImages()">
+              <ion-icon name="ios-camera-outline"></ion-icon>
+            </button>
+            <button ion-fab mini color="danger" (click)="getMusic()">
+              <ion-icon name="ios-musical-note"></ion-icon>
+            </button>
+            <button ion-fab mini color="primary" (click)="getMedia()">
+              <ion-icon name="ios-videocam"></ion-icon>
+            </button>
+            <button ion-fab mini color="danger" (click)="shareImages()">
+              <ion-icon name="ios-images"></ion-icon>
+            </button>
+          </ion-fab-list>
+        </ion-fab>
+        <button ion-button color="danger" item-right clear (click)="addPost();">
+        </button>
+      </ion-item>
+    </ion-card>
+       -->
+      
+
+  <!-- Card One test -->
+  <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/banky.png">
+        </ion-avatar>
+        <h2>Odogwu johnny</h2>
+        <p>November 5, 2018</p>
+      </ion-item>
+    
+      <ion-card-content>
+          <p>Banky W and his wife Adesua Etomi</p>
+        </ion-card-content>
+
+      <img src="../../assets/imgs/banky.png">
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+    </ion-card>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Cardtwo test -->
+  <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/jidenna.jpg">
+        </ion-avatar>
+        <h2>Nikky Fizzy</h2>
+        <p>November 5, 2018</p>
+      </ion-item>
+    
+      <ion-card-content>
+          <p>Guys please rate this attire</p>
+        </ion-card-content>
+
+      <img src="../../assets/imgs/jidenna.jpg">
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>154 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>83 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+</ion-card>
+
+
+
+
+
+
+    
+
+  
+  
+  
+  </ion-content>

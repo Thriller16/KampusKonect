@@ -1,0 +1,47 @@
+page-landing {
+
+    .container {
+        position: relative;
+        text-align: center;
+        color: black;
+    }
+    
+    .app-name {
+        font-size: 35px;
+        position: absolute;
+        bottom: 30px;
+        right: 16px;
+    }
+    
+    .app-description {
+        font-size: 15px;
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+    }
+
+    .page-buttons {
+        border-radius: 12px;
+        color: color($colors, secondary);
+        font-size: 15px;
+        position: absolute;
+        background-color: white;
+        bottom: 8px;
+        right: 16px;
+    }
+    .page-buttons_ {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 2px solid color($colors, secondary);
+        border-radius: 8px;
+        color: color($colors, secondary);
+        font-size: 20px;
+        position: absolute;
+        background-color: white;
+        bottom: 25px;
+        right: 16px;
+    }
+
+}

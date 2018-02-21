@@ -1,0 +1,32 @@
+page-register {
+    .loginbtns{
+        height: 40px;
+        color: white;
+        background-color: color($colors, secondary);
+    }
+
+    .custom-icon {
+        // font-size: 64px;
+        color : white;
+      }
+
+      .facebookbutton{
+        height: 40px;
+        color: white;
+        background-color: #4880ef;
+      }
+    //   .page-buttons_ {
+    //     padding-left: 30px;
+    //     padding-right: 30px;
+    //     padding-top: 15px;
+    //     padding-bottom: 15px;
+    //     border: 2px solid color($colors, secondary);
+    //     border-radius: 8px;
+    //     color: color($colors, secondary);
+    //     font-size: 20px;
+    //     position: absolute;
+    //     background-color: white;
+    //     bottom: 25px;
+    //     right: 16px;
+    // }
+}

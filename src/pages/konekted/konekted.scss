@@ -1,0 +1,15 @@
+page-konekted {
+    .toolbar-background {
+        background: color($colors, secondary);
+      }
+
+      .toolbar-title {
+        color : #fff;
+    }
+
+
+      .custom-icon {
+        // font-size: 64px;
+        color : color($colors, light);
+      }
+}

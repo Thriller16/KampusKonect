@@ -1,0 +1,23 @@
+page-login {
+
+    .loginbtns{
+        height: 40px;
+        color: white;
+        background-color: color($colors, secondary);
+    }
+
+    .custom-icon {
+        // font-size: 64px;
+        color : white;
+      }
+
+      .sometext{
+        color: color($colors, secondary);
+      }
+
+      .facebookbutton{
+        height: 40px;
+        color: white;
+        background-color: #4880ef;
+    }
+}

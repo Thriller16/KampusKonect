@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Nav, Platform, NavController } from 'ionic-angular';
+import { SettingsPage } from '../../pages/settings/settings';
+import { LoginPage } from '../../pages/login/login';
+import { App } from 'ionic-angular/components/app/app';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +10,20 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild(Nav) nav: Nav;
 
+  constructor(public navCtrl: NavController, public app: App) {
+    // this.app.getRootNav().setRoot(SettingsPage);
   }
 
+  openSettings(){
+    let nav = this.app.getRootNav();
+    nav.push(SettingsPage);
+  }
+
+  openLogin(){
+    let nav = this.app.getRootNav();
+    nav.push(LoginPage);
+  }
+  
 }
