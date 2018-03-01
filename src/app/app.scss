@@ -9,6 +9,7 @@
 		}
 	}
 
+
 	a.tab-button[aria-selected=true]{
         // color: color($colors, primary);
 		.tab-button-icon {
@@ -18,13 +19,11 @@
 	}	
 }
 
-
 .container {
     position: relative;
     text-align: center;
 	color: white;
-	background: color($colors, primary);	
-	
+	background: color($colors, primary);
 }
 
 .user-name {

@@ -26,10 +26,11 @@
 
 </ion-header>
 
+
 <ion-content class="master">
 
 <!-- Post Card -->
-<ion-card>
+<div class="postcard">
       <ion-item>
           <!-- <ion-icon name="contact"></ion-icon> -->
           <ion-icon name="contact" item-start large></ion-icon>
@@ -41,13 +42,13 @@
           
       </ion-item>
 
-</ion-card>
+    </div>
 
 
 
 
 <!-- Card Two test -->
-<ion-card class="contentclass">
+<div class="contentclass">
     <ion-item>
       <ion-avatar item-start>
         <img src="../../assets/imgs/banky.png">
@@ -56,53 +57,47 @@
       <p>Dec 5, 2018. <b>UNIPORT</b></p>
 
       <ion-icon name="md-more" item-end></ion-icon>
+    
     </ion-item>
-  
-    <ion-card-content>
+
         <p>Meet banky W and his wife</p>
-      </ion-card-content>
 
     <img src="../../assets/imgs/banky.png">
   
-    <ion-row>
-
-      <ion-col col-auto>
+    <table id="t01" style="width:100%">
+      <tr>
+        <td>
           <rating
           readOnly="false"
           max="5"
-          emptyStarIconName="star-outline"
+          emptyStarIconName="ios-heart-outline"
           halfStarIconName="star-half"
-          starIconName="star"
+          starIconName="ios-heart"
           nullable="false"
           [(ngModel)]="rate" 
-      (ngModelChange)="onModelChange($event)"
-      ></rating>
-          <!-- <b>4(2,678)</b> -->
-      </ion-col>
+      (ngModelChange)="onModelChange($event)"></rating>
+        </td>
 
-      
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <!-- <ion-icon name="thumbs-up"></ion-icon> -->
-          <p color="dark">4(2,679)</p>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small color="dark">
-          <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
-        </button>
-      </ion-col>
+        <td>4(7,296)</td> 
+      </tr>
 
-      <ion-col>
-        <button ion-button icon-left clear small color="dark">
-          <ion-icon name="md-share"></ion-icon>
-          <div>4 Shares</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  
-  </ion-card>
+      <tr>
+        <td class="other">
+          <button ion-button icon-left clear small color="dark">
+            <ion-icon name="text"></ion-icon>
+            <div>4 Reviews</div>
+          </button>
+        </td>
+
+        <td>
+          <button ion-button icon-left clear small color="dark">
+            <ion-icon name="md-share"></ion-icon>
+            <div>4 Shares</div>
+          </button>
+        </td> 
+      </tr>
+    </table>  
+  </div>
 
 
 
@@ -114,7 +109,7 @@
         <img src="../../assets/imgs/genet.jpg">
       </ion-avatar>
       <h2>Nikky braide</h2>
-      <p>November 5, 2018. <b>RSUST</b></p>
+      <p>Nov 5, 2018. <b>RSUST</b></p>
 
       <ion-icon name="md-more" item-end></ion-icon>
     </ion-item>
