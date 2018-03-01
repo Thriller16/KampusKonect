@@ -1,39 +1,62 @@
 .tabbar {
-	a.tab-button[aria-selected=false]:nth-of-type(1) {
-        color: color($colors, light);
+	a.tab-button[aria-selected=false]{
+		color: color($colors, dark);
+		
 		.tab-button-icon {
-			color: color($colors, light);
+			color: color($colors, dark);
+			font-size: 25px;
+			
 		}
 	}
-	a.tab-button[aria-selected=false]:nth-of-type(2) {
-		color: color($colors, light);
+
+	a.tab-button[aria-selected=true]{
+        // color: color($colors, primary);
 		.tab-button-icon {
-			color: color($colors, light);
+			color: color($colors, primary);
+			font-size: 35px;
 		}
-	}
-	a.tab-button[aria-selected=false]:nth-of-type(3) {
-		color: color($colors, light);
-		.tab-button-icon {
-			color: color($colors, light);
-		}
-	}
+	}	
 }
+
 
 .container {
     position: relative;
     text-align: center;
-    color: white;
+	color: white;
+	background: color($colors, primary);	
+	
 }
 
 .user-name {
-	font-size: 20px;
+	font-size: 15px;
     position: absolute;
-    bottom: 30px;
+    bottom: 25px;
     right: 16px;
 }
 
+
+.image {
+	height: 5vw; 
+	width: 5vw; 
+   border: 2px solid #fff;
+   border-radius: 50%;
+   box-shadow: 0 0 5px gray;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.userimage{
+    width:90px;
+    height:90px;
+    -webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin: 50px;
+}
+
+
 .user-mail {
-	font-size: 16px;
+	font-size: 12px;
     position: absolute;
     bottom: 8px;
     right: 16px;

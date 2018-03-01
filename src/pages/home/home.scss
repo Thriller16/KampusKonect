@@ -1,10 +1,11 @@
 page-home {
     .toolbar-background {
-        background: color($colors, secondary);
+        background: color($colors, primary);
       }
 
       .toolbar-title {
         color : #fff;
+        text-align: left;
     }
 
 
@@ -13,4 +14,46 @@ page-home {
         color : color($colors, light);
       }
 
+      .master{
+        background: #c3c3c3
+      }
+
+      button {
+        ion-badge {
+          position: absolute;
+          top: -0.2rem;
+          right: -0.2rem;
+          background: color($colors, primary);
+      
+          & ~ ion-icon {
+            margin-right: 1.4rem;
+            color: white;
+          }
+        }
+      }
+     
+      ul {
+        padding: 0px;
+       
+        &.rating li {
+          padding: 5px !important;
+          background: none;
+          color: #000;
+       
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .card
+{
+     margin-bottom: 5px !important;
+    //  width: 100%;
+    //  margin-left: 5px !important;
+    //  margin-right: 5px !important;
+     
+     
+
+}
 }

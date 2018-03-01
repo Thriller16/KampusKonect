@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { UserProvider } from '../../providers/user/user'
+// import { UserProvider } from '../../providers/user/user'
 import { LoginPage } from '../login/login';
-import { AngularFireAuth} from 'angularfire2/auth';
+// import { AngularFireAuth} from 'angularfire2/auth';
 
 
 /**
@@ -26,25 +26,26 @@ export class RegisterPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public afire: AngularFireAuth,
-    public userservice: UserProvider, public loadingCtrl: LoadingController) {
+    // public afire: AngularFireAuth,
+    // public userservice: UserProvider, 
+    public loadingCtrl: LoadingController) {
   }
 
-  registeruser(){
-    // this.afire.auth.createUserWithEmailAndPassword(this.newUser.email, this.newUser.password);
-    let loader = this.loadingCtrl.create({
-      content: 'Creating your account'
-    });
-    loader.present();
-    this.userservice.createnewUser(this.newUser).then((res: any) =>{
-      loader.dismiss();
-      if(res.success){
-        this.navCtrl.push(LoginPage, {signedemail: this.newUser.email, signedusername: this.newUser.displayname});
-      }else{
-        alert("Error" + res);
-      }
-    })
-  }
+  // registeruser(){
+  //   // this.afire.auth.createUserWithEmailAndPassword(this.newUser.email, this.newUser.password);
+  //   let loader = this.loadingCtrl.create({
+  //     content: 'Creating your account'
+  //   });
+  //   loader.present();
+  //   this.userservice.createnewUser(this.newUser).then((res: any) =>{
+  //     loader.dismiss();
+  //     if(res.success){
+  //       this.navCtrl.push(LoginPage, {signedemail: this.newUser.email, signedusername: this.newUser.displayname});
+  //     }else{
+  //       alert("Error" + res);
+  //     }
+  //   })
+  // }
 
 
 

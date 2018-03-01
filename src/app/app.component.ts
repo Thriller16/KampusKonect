@@ -7,7 +7,7 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { InvitefriendsPage } from '../pages/invitefriends/invitefriends';
 import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
-import { LandingPage } from '../pages/landing/landing';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 // import { Observable } from 'rxjs/Observable';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -21,7 +21,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage:any = LandingPage;
+  rootPage:any = TabsPage;
 
   pages: Array<{title: string, icon:string,component: any}>;
 
@@ -33,10 +33,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', icon : 'md-home', component: TabsPage },
-      { title: 'Favorites', icon : 'md-heart',  component: FavoritesPage },
-      { title: 'Settings', icon : 'ios-cog',  component: SettingsPage },
-      { title: 'Invite Friends', icon : 'ios-cog',  component: InvitefriendsPage },
-      { title: 'Logout', icon : 'ios-cog',  component: LoginPage }
+      { title: 'Dashboard', icon : 'md-list',  component: FavoritesPage },
+      { title: 'Invite Friends', icon : 'ios-people',  component: InvitefriendsPage },      
+      { title: 'Settings', icon : 'md-settings',  component: SettingsPage },
+      { title: 'Logout', icon : 'ios-log-out',  component: LoginPage }
     ];
 
   }

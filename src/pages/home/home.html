@@ -1,177 +1,150 @@
 <ion-header >
 
-    <ion-toolbar  align-title="left">
-        <button ion-button left menuToggle>
-          <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>
-        </button>
-        <ion-title>CampusKonekt</ion-title>
+  <ion-toolbar  align-title="left">
+      <button ion-button left menuToggle>
+        <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>
+      </button>
+      <ion-title>CampusKonekt</ion-title>
 
-        <!-- Button for testing the login page -->
-        <ion-buttons end>
-            <button ion-button icon-only>
-              <ion-icon class="icon ion-home custom-icon" name="search"></ion-icon>
-            </button>
-        </ion-buttons>
+      <!-- Button for testing the login page -->
+      <ion-buttons end>
+          <button ion-button icon-only>
+            <ion-icon class="icon ion-home custom-icon" name="search"></ion-icon>
+          </button>
+      </ion-buttons>
 
-        <!-- <ion-buttons end (click)="openSettings()">
-            <button ion-button icon-only>
-              <ion-icon name="settings"></ion-icon>
-            </button>
-        </ion-buttons> -->
-  
-        <ion-buttons end>
-            <button ion-button icon-only>
-              <ion-icon class="icon ion-home custom-icon" name="notifications-outline"></ion-icon>
-              <ion-badge color="light" >5</ion-badge>
-            </button>
-        </ion-buttons>
 
-      </ion-toolbar>
-  
+      <ion-buttons end>
+          <button ion-button icon-only>
+              <ion-badge >5</ion-badge>
+            <ion-icon class="icon ion-home custom-icon" name="notifications-outline"></ion-icon>
+            
+          </button>
+      </ion-buttons>
+
+    </ion-toolbar>
+
 </ion-header>
 
-<ion-content padding>
+<ion-content class="master">
 
-  <!-- Post Card -->
-  <ion-card>
-        <ion-item>
-            <!-- <ion-icon name="contact"></ion-icon> -->
-            <ion-icon name="contact" item-start large></ion-icon>
-            <ion-textarea placeholder="What have you got?"></ion-textarea>
-            <ion-icon name="md-add-circle" item-end></ion-icon>
-        </ion-item>
-
-  </ion-card>
-
-
-
-  <!-- <ion-card>
+<!-- Post Card -->
+<ion-card>
       <ion-item>
-        <ion-avatar item-start>
-          <img >
-        </ion-avatar>
-        <textarea [(ngModel)]="test" class="addContectfield" type="text" placeholder="What have you got?"></textarea>
-  
-        <ion-fab right style="margin-right:0px!important">
-          <button ion-fab mini color="dark">
-            <ion-icon name="ios-add-outline"></ion-icon>
-          </button>
-          <ion-fab-list side="left">
-            <button ion-fab mini color="yellowfab" (click)="shareImages()">
-              <ion-icon name="ios-camera-outline"></ion-icon>
-            </button>
-            <button ion-fab mini color="danger" (click)="getMusic()">
-              <ion-icon name="ios-musical-note"></ion-icon>
-            </button>
-            <button ion-fab mini color="primary" (click)="getMedia()">
-              <ion-icon name="ios-videocam"></ion-icon>
-            </button>
-            <button ion-fab mini color="danger" (click)="shareImages()">
-              <ion-icon name="ios-images"></ion-icon>
-            </button>
-          </ion-fab-list>
-        </ion-fab>
-        <button ion-button color="danger" item-right clear (click)="addPost();">
-        </button>
+          <!-- <ion-icon name="contact"></ion-icon> -->
+          <ion-icon name="contact" item-start large></ion-icon>
+          <ion-textarea placeholder="What have you got?"></ion-textarea>
+          <ion-icon name="ios-camera-outline" item-end></ion-icon>
+          <ion-icon name="ios-videocam-outline" item-end></ion-icon>
+          <ion-icon name="ios-musical-notes-outline" item-end></ion-icon>
+          
+          
       </ion-item>
-    </ion-card>
-       -->
-      
 
-  <!-- Card One test -->
-  <ion-card>
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/banky.png">
-        </ion-avatar>
-        <h2>Odogwu johnny</h2>
-        <p>November 5, 2018</p>
-      </ion-item>
-    
-      <ion-card-content>
-          <p>Banky W and his wife Adesua Etomi</p>
-        </ion-card-content>
-
-      <img src="../../assets/imgs/banky.png">
-    
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>12 Likes</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>4 Comments</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
-          <ion-note>
-            11h ago
-          </ion-note>
-        </ion-col>
-      </ion-row>
-    
-    </ion-card>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Cardtwo test -->
-  <ion-card>
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/jidenna.jpg">
-        </ion-avatar>
-        <h2>Nikky Fizzy</h2>
-        <p>November 5, 2018</p>
-      </ion-item>
-    
-      <ion-card-content>
-          <p>Guys please rate this attire</p>
-        </ion-card-content>
-
-      <img src="../../assets/imgs/jidenna.jpg">
-    
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>154 Likes</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>83 Comments</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
-          <ion-note>
-            11h ago
-          </ion-note>
-        </ion-col>
-      </ion-row>
-    
 </ion-card>
 
 
 
 
+<!-- Card Two test -->
+<ion-card class="contentclass">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/banky.png">
+      </ion-avatar>
+      <h2>Odogwu Johnny</h2>
+      <p>Dec 5, 2018. <b>UNIPORT</b></p>
+
+      <ion-icon name="md-more" item-end></ion-icon>
+    </ion-item>
+  
+    <ion-card-content>
+        <p>Meet banky W and his wife</p>
+      </ion-card-content>
+
+    <img src="../../assets/imgs/banky.png">
+  
+    <ion-row>
+
+      <ion-col col-auto>
+          <rating
+          readOnly="false"
+          max="5"
+          emptyStarIconName="star-outline"
+          halfStarIconName="star-half"
+          starIconName="star"
+          nullable="false"
+          [(ngModel)]="rate" 
+      (ngModelChange)="onModelChange($event)"
+      ></rating>
+          <!-- <b>4(2,678)</b> -->
+      </ion-col>
+
+      
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <!-- <ion-icon name="thumbs-up"></ion-icon> -->
+          <p color="dark">4(2,679)</p>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small color="dark">
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button icon-left clear small color="dark">
+          <ion-icon name="md-share"></ion-icon>
+          <div>4 Shares</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  
+  </ion-card>
 
 
-    
 
+
+<!-- Card One test -->
+<ion-card class="contentclass">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/genet.jpg">
+      </ion-avatar>
+      <h2>Nikky braide</h2>
+      <p>November 5, 2018. <b>RSUST</b></p>
+
+      <ion-icon name="md-more" item-end></ion-icon>
+    </ion-item>
   
+    <ion-card-content>
+        <p>Happy birthday to me</p>
+      </ion-card-content>
+
+    <img src="../../assets/imgs/genet.jpg">
   
+    <ion-row>
+
+     
+      <ion-col>
+        <button ion-button icon-left clear small color="dark">
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button icon-left clear small color="dark">
+          <ion-icon name="md-share"></ion-icon>
+          <div>4 Shares</div>
+        </button>
+      </ion-col>
+    </ion-row>
   
-  </ion-content>
+  </ion-card>
+
+
+
+</ion-content>

@@ -36,7 +36,7 @@ $app-direction: ltr;
 $colors: (
   primary:    #990002,
   secondary:  #990002,
-  danger:     #f53d3d,
+  danger:     #990002,
   light:      #f4f4f4,
   dark:       #222
   // primary:    rgb(165, 42, 42)
@@ -56,10 +56,14 @@ $colors: (
 
 $tabs-tab-color-active: color($colors, light);
 $tabs-tab-icon-color: color($colors, light);
-$tabs-background: color($colors, secondary);
+$tabs-background: color($colors, light);
 
 
+$card-ios-margin-left: 0;
+$card-ios-margin-right: 0;
 
+$card-wp-margin-left: 0;
+$card-wp-margin-right: 0;
 
 
 // App Windows Variables

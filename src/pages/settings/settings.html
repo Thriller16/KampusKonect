@@ -1,130 +1,134 @@
 <ion-header >
-        <ion-navbar align-title="center">
-            <ion-title>Settings</ion-title>
-        </ion-navbar>
-</ion-header>
 
+  <ion-toolbar  align-title="left">
+      <button ion-button left menuToggle>
+        <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>
+      </button>
+      <ion-title>Settings</ion-title>
+    </ion-toolbar>
+
+</ion-header>
 
 <ion-content padding>
 
-  <!-- Card one -->
-  <ion-card>
-    <ion-card-header>Profile</ion-card-header>
-    <ion-list>
-        <ion-item>Display Name<b style="float:right">Nelson Einstein</b></ion-item>
-        <ion-item>Username <b style="float:right">Nelson</b></ion-item>
-        <ion-item>Password <ion-icon style="float:right" name="ios-eye"></ion-icon> <b style="float:right"> **********</b></ion-item>
-        <ion-item>Email <b style="float:right">nelsonenstein123@gmail.com</b></ion-item>
-        <ion-item>Phone No <b style="float:right">09077841939</b></ion-item>
-    </ion-list>
-  </ion-card>
+<!-- Card one -->
+<ion-card>
+  <ion-card-header>Profile</ion-card-header>
+  <ion-list>
+      <ion-item>Display Name<b style="float:right">Nelson Einstein</b></ion-item>
+      <ion-item>Username <b style="float:right">Nelson</b></ion-item>
+      <ion-item>Password <ion-icon style="float:right" name="ios-eye"></ion-icon> <b style="float:right"> **********</b></ion-item>
+      <ion-item>Email <b style="float:right">nelsonenstein123@gmail.com</b></ion-item>
+      <ion-item>Phone No <b style="float:right">09077841939</b></ion-item>
+  </ion-list>
+</ion-card>
 
 <!-- Card two -->
-  <ion-card>
-    <ion-card-header>Privacy</ion-card-header>
+<ion-card>
+  <ion-card-header>Privacy</ion-card-header>
 
-      <ion-list>
+    <ion-list>
 
-          <ion-item>
-            <ion-label>Who can view/rate my post?</ion-label>
-                <ion-select >
+        <ion-item>
+          <ion-label>Who can view/rate my post?</ion-label>
+              <ion-select >
+                <ion-option selected>Everyone</ion-option>
+                <ion-option >Contacts only</ion-option>
+                <ion-option >Konekted friends</ion-option>
+                <ion-option >No one</ion-option>
+              </ion-select>
+        </ion-item>
+
+        <ion-item>
+              <ion-label>Who can view/rate my post?</ion-label>
+                  <ion-select >
+                    <ion-option selected>Everyone</ion-option>
+                    <ion-option >Contacts only</ion-option>
+                    <ion-option >Konekted friends</ion-option>
+                    <ion-option >No one</ion-option>
+                  </ion-select>
+          </ion-item>
+
+
+        <ion-item>
+            <ion-label>Who can share my post? </ion-label>
+               <ion-select >
                   <ion-option selected>Everyone</ion-option>
                   <ion-option >Contacts only</ion-option>
                   <ion-option >Konekted friends</ion-option>
                   <ion-option >No one</ion-option>
                 </ion-select>
-          </ion-item>
+        </ion-item>
 
-          <ion-item>
-                <ion-label>Who can view/rate my post?</ion-label>
-                    <ion-select >
-                      <ion-option selected>Everyone</ion-option>
-                      <ion-option >Contacts only</ion-option>
-                      <ion-option >Konekted friends</ion-option>
-                      <ion-option >No one</ion-option>
-                    </ion-select>
-            </ion-item>
+        <ion-item>
+            <ion-label>Who can comment on my post? </ion-label>
+              <ion-select >
+                  <ion-option selected>Everyone</ion-option>
+                  <ion-option >Contacts only</ion-option>
+                  <ion-option >Konekted friends</ion-option>
+                  <ion-option >No one</ion-option>
+                </ion-select>
+        </ion-item>
 
+        <ion-item>
+            <ion-label>Allow other to see me  on suggestions/nearby? </ion-label>
+                <ion-toggle color="blue" checked="false"></ion-toggle>
+        </ion-item>
 
-          <ion-item>
-              <ion-label>Who can share my post? </ion-label>
-                 <ion-select >
-                    <ion-option selected>Everyone</ion-option>
-                    <ion-option >Contacts only</ion-option>
-                    <ion-option >Konekted friends</ion-option>
-                    <ion-option >No one</ion-option>
-                  </ion-select>
-          </ion-item>
+        <ion-item>
+            <ion-label>Allow other to purchase your orders? </ion-label>
+                <ion-toggle color="blue" checked="false"></ion-toggle>
+        </ion-item>
 
-          <ion-item>
-              <ion-label>Who can comment on my post? </ion-label>
-                <ion-select >
-                    <ion-option selected>Everyone</ion-option>
-                    <ion-option >Contacts only</ion-option>
-                    <ion-option >Konekted friends</ion-option>
-                    <ion-option >No one</ion-option>
-                  </ion-select>
-          </ion-item>
+        <ion-item>
+            <ion-label>Allow user to add you to Hubs? </ion-label>
+                <ion-toggle color="blue" checked="false"></ion-toggle>
+        </ion-item>
 
-          <ion-item>
-              <ion-label>Allow other to see me  on suggestions/nearby? </ion-label>
-                  <ion-toggle color="blue" checked="false"></ion-toggle>
-          </ion-item>
-
-          <ion-item>
-              <ion-label>Allow other to purchase your orders? </ion-label>
-                  <ion-toggle color="blue" checked="false"></ion-toggle>
-          </ion-item>
-
-          <ion-item>
-              <ion-label>Allow user to add you to Hubs? </ion-label>
-                  <ion-toggle color="blue" checked="false"></ion-toggle>
-          </ion-item>
-
-      </ion-list>
-  </ion-card>
+    </ion-list>
+</ion-card>
 
 <!-- Card 3 -->
 <ion-card>
-    <ion-card-header>Notifications</ion-card-header>
-      <ion-list>
+  <ion-card-header>Notifications</ion-card-header>
+    <ion-list>
 
-        <ion-item>
-          <ion-label>Enable my notifications? </ion-label>
-              <ion-toggle color="blue"></ion-toggle>
-        </ion-item>
+      <ion-item>
+        <ion-label>Enable my notifications? </ion-label>
+            <ion-toggle color="blue"></ion-toggle>
+      </ion-item>
 
-        <ion-item>
-              <button ion-button full color="secondary" (click)="sendNotificationToMe()">Send Notification</button>
-        </ion-item>
+      <ion-item>
+            <button ion-button full color="secondary" (click)="sendNotificationToMe()">Send Notification</button>
+      </ion-item>
 
-      </ion-list>
+    </ion-list>
 </ion-card>
 
 <!-- Card 4 -->
 <ion-card>
-  <ion-card-header>Post Settings</ion-card-header>
-  <ion-list>
-      <ion-item>
-          <ion-label>Auto play video & audios </ion-label>
-              <ion-toggle color="blue" checked="false"></ion-toggle>
-      </ion-item>
+<ion-card-header>Post Settings</ion-card-header>
+<ion-list>
+    <ion-item>
+        <ion-label>Auto play video & audios </ion-label>
+            <ion-toggle color="blue" checked="false"></ion-toggle>
+    </ion-item>
 
-      <ion-item>
-          <ion-label>Video Quality</ion-label>
-              <ion-select >
-                <ion-option value="nes" selected>HD Quality</ion-option>
-                <ion-option value="n64">Normal</ion-option>
-                <ion-option value="n65">Low</ion-option>
-              </ion-select>
-      </ion-item>
+    <ion-item>
+        <ion-label>Video Quality</ion-label>
+            <ion-select >
+              <ion-option value="nes" selected>HD Quality</ion-option>
+              <ion-option value="n64">Normal</ion-option>
+              <ion-option value="n65">Low</ion-option>
+            </ion-select>
+    </ion-item>
 
-      <ion-item>
-          <ion-label>keep the most interesting posts on top? </ion-label>
-              <ion-toggle color="blue" checked="false"></ion-toggle>
-      </ion-item>
+    <ion-item>
+        <ion-label>keep the most interesting posts on top? </ion-label>
+            <ion-toggle color="blue" checked="false"></ion-toggle>
+    </ion-item>
 
-  </ion-list>
+</ion-list>
 </ion-card>
 
 </ion-content>

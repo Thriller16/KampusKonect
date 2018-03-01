@@ -3,7 +3,7 @@
       <ion-toolbar>
             <!-- <ion-title> -->
                 <div class="container">
-                    <img src="../../assets/imgs/banky.png" style="width:100%;">
+                    <img class="userimage" src="../../assets/imgs/banky.png">
                     <div class="user-name">Nelson Enstein</div>
                     <div class="user-mail">nelsonenstein@gmail.com</div>
                 </div>
@@ -16,6 +16,7 @@
 
           <ion-list>
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <ion-icon [name]="p.icon" item-left></ion-icon>
               {{p.title}}
             </button>
           </ion-list>
