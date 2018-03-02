@@ -41,9 +41,10 @@ page-home {
         padding: 0px;
        
         &.rating li {
+          // margin-left:30px;
           padding: 5px !important;
           background: none;
-          color: #000;
+          color: color($colors, dark);
        
           ion-icon {
             font-size: 35px;
@@ -51,24 +52,20 @@ page-home {
         }
       }
 
+      table {
+        border-collapse: separate;
+        border-spacing: 15px 0;
+        
+      }
+      
+      td {
+        // padding: 10px 0;
+      }
+      
+
       .contentclass
         {
-          margin-bottom: 1px !important;
+          margin-bottom: 2px !important;
           background: white;
-    //  width: 80%;
-    //  text-align: center;
-    //  margin-left: 5px !important;
-    //  margin-right: 5px !important;
 }
-
-// table#t01 tr:nth-child(even) {
-//   // background-color: #c3c;
-//   // text-align: center;
-//   margin: 40px;
-// }
-// table#t01 tr:nth-child(odd) {
-  // margin-right: 30px;
-  // background-color: #fff;
-  
-// }
 }

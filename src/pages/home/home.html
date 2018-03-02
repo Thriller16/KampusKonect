@@ -60,86 +60,108 @@
     
     </ion-item>
 
-        <p>Meet banky W and his wife</p>
+        <p style="padding-left:10px; font-size:17px">Meet banky W and his wife</p>
 
     <img src="../../assets/imgs/banky.png">
   
-    <table id="t01" style="width:100%">
-      <tr>
-        <td>
-          <rating
-          readOnly="false"
-          max="5"
-          emptyStarIconName="ios-heart-outline"
-          halfStarIconName="star-half"
-          starIconName="ios-heart"
-          nullable="false"
-          [(ngModel)]="rate" 
-      (ngModelChange)="onModelChange($event)"></rating>
-        </td>
+    <div>
+        <table>
 
-        <td>4(7,296)</td> 
-      </tr>
+            <tr>
+                <td>
+                    <rating readOnly="false" max="5" emptyStarIconName="ios-heart-outline"
+                    halfStarIconName="star-half" starIconName="ios-heart" nullable="false" 
+                    [(ngModel)]="rate" (ngModelChange)="onModelChange($event)"></rating>
+                </td>
+        
+                <td>
+                    <div style="padding-left:90px">4(7,296)</div>
+                </td> 
+              </tr>
+            
+          </table>  
+    </div>
 
-      <tr>
-        <td class="other">
-          <button ion-button icon-left clear small color="dark">
-            <ion-icon name="text"></ion-icon>
-            <div>4 Reviews</div>
-          </button>
-        </td>
-
-        <td>
-          <button ion-button icon-left clear small color="dark">
-            <ion-icon name="md-share"></ion-icon>
-            <div>4 Shares</div>
-          </button>
-        </td> 
-      </tr>
-    </table>  
+    <div style="margin-left:15%">
+      <table>
+          <tr>
+              <td>
+                <button ion-button icon-left clear small color="dark" style="text-transform: none; font-size:16px">
+                  <ion-icon name="text"></ion-icon>
+                  <div>4 Reviews</div>
+                </button>
+              </td>
+      
+              <td>
+                <button ion-button icon-left clear small color="dark" style="text-transform: none; font-size:16px">
+                  <ion-icon name="md-share"></ion-icon>
+                  <div>4 Shares</div>
+                </button>
+              </td> 
+            </tr>
+      </table>
+       
+    </div>
+    
   </div>
 
 
 
 
 <!-- Card One test -->
-<ion-card class="contentclass">
+
+<div class="contentclass">
     <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/genet.jpg">
-      </ion-avatar>
-      <h2>Nikky braide</h2>
-      <p>Nov 5, 2018. <b>RSUST</b></p>
-
-      <ion-icon name="md-more" item-end></ion-icon>
-    </ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/genet.jpg">
+        </ion-avatar>
+        <h2>Nikky braide</h2>
+        <p>Nov 5, 2018. <b>RSUST</b></p>
   
-    <ion-card-content>
-        <p>Happy birthday to me</p>
-      </ion-card-content>
-
-    <img src="../../assets/imgs/genet.jpg">
+        <ion-icon name="md-more" item-end></ion-icon>
+      </ion-item>
+    
+      <ion-card-content>
+          <p>Happy birthday to me</p>
+        </ion-card-content>
   
-    <ion-row>
+      <img src="../../assets/imgs/genet.jpg">
+    
+    <div style="margin-left: 18%">
+        <table>
 
-     
-      <ion-col>
-        <button ion-button icon-left clear small color="dark">
-          <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
-        </button>
-      </ion-col>
+            <tr>
+                <td>
+                    <rating readOnly="false" max="5" emptyStarIconName="ios-heart-outline"
+                    halfStarIconName="star-half" starIconName="ios-heart" nullable="false" 
+                    [(ngModel)]="rate" (ngModelChange)="onModelChange($event)"></rating>
+                </td>
+        
+                <td>
+                    <div>4(7,296)</div>
+                </td> 
+              </tr>
+            
+          </table>  
+    </div>
 
-      <ion-col>
-        <button ion-button icon-left clear small color="dark">
-          <ion-icon name="md-share"></ion-icon>
-          <div>4 Shares</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  
-  </ion-card>
-
-
-
+    <div style="margin-left:20%">
+        <tr>
+            <td>
+              <button ion-button icon-left clear small color="dark" style="text-transform: none; font-size:16px">
+                <ion-icon name="text"></ion-icon>
+                <div>4 Reviews</div>
+              </button>
+            </td>
+    
+            <td>
+              <button ion-button icon-left clear small color="dark" style="text-transform: none; font-size:16px">
+                <ion-icon name="md-share"></ion-icon>
+                <div>4 Shares</div>
+              </button>
+            </td> 
+          </tr>
+    </div>
+    
+  </div>
 </ion-content>

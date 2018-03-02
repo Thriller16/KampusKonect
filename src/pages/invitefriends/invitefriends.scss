@@ -1,3 +1,49 @@
 page-invitefriends {
-
+    .toolbar-background {
+        background: color($colors, secondary);
+      }
+    
+      .toolbar-title {
+        color : #fff;
+        text-align: left;
+    }
+    
+    
+      .custom-icon {
+        // font-size: 64px;
+        color : color($colors, light);
+      }
+    
+      .master{
+        background: #c3c3c3
+      }
+    
+    
+      button {
+        ion-badge {
+          position: absolute;
+          top: -0.2rem;
+          right: -0.2rem;
+          background: color($colors, primary);
+      
+          & ~ ion-icon {
+            margin-right: 1.4rem;
+            color: white;
+          }
+        }
+      }
+     
+      ul {
+        padding: 0px;
+       
+        &.rating li {
+          padding: 5px !important;
+          background: none;
+          color: #000;
+       
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+      }
 }
