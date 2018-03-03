@@ -10,6 +10,12 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LandingPage } from '../pages/landing/landing';
 import { SettingsPage } from '../pages/settings/settings';
+import { ProfilePage } from '../pages/profile/profile';
+import { PrivacyPage } from '../pages/privacy/privacy';
+import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
+
+
+
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 
@@ -41,6 +47,9 @@ import { UserProvider } from '../providers/user/user';
     LandingPage,
     SettingsPage,
     DashboardPage,    
+    PrivacyPage,
+    ProfilePage,
+    NotificationsettingsPage,
     LoginPage,
     RegisterPage,
     TabsPage
@@ -64,7 +73,10 @@ import { UserProvider } from '../providers/user/user';
     ListPage,
     LandingPage,
     SettingsPage,
-    DashboardPage,    
+    DashboardPage, 
+    PrivacyPage,   
+    ProfilePage,
+    NotificationsettingsPage,
     LoginPage,
     RegisterPage,
     TabsPage

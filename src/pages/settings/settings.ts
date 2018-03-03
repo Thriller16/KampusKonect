@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfilePage } from '../profile/profile';
+import { PrivacyPage } from '../privacy/privacy';
+import { NotificationsettingsPage } from '../notificationsettings/notificationsettings';
 
 /**
  * Generated class for the SettingsPage page.
@@ -22,4 +25,15 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  openProfile(){
+    this.navCtrl.push(ProfilePage);
+  }
+
+  openPrivacy(){
+    this.navCtrl.push(PrivacyPage);
+  }
+
+  openNotificationSettings(){
+    this.navCtrl.push(NotificationsettingsPage);
+  }
 }

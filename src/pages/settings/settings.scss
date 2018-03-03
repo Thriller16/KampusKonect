@@ -46,4 +46,10 @@ page-settings {
           }
         }
       }
+
+      .loginbtns{
+        height: 40px;
+        color: white;
+        background-color: color($colors, secondary);
+    }
 }
