@@ -13,6 +13,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { ProfilePage } from '../pages/profile/profile';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
+import { PostsettingsPage } from '../pages/postsettings/postsettings';
 
 
 
@@ -46,7 +47,8 @@ import { UserProvider } from '../providers/user/user';
     ListPage,
     LandingPage,
     SettingsPage,
-    DashboardPage,    
+    DashboardPage,  
+    PostsettingsPage,  
     PrivacyPage,
     ProfilePage,
     NotificationsettingsPage,
@@ -74,6 +76,7 @@ import { UserProvider } from '../providers/user/user';
     LandingPage,
     SettingsPage,
     DashboardPage, 
+    PostsettingsPage,
     PrivacyPage,   
     ProfilePage,
     NotificationsettingsPage,

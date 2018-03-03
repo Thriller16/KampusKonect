@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { PrivacyPage } from '../privacy/privacy';
 import { NotificationsettingsPage } from '../notificationsettings/notificationsettings';
+import { PostsettingsPage } from '../postsettings/postsettings';
 
 /**
  * Generated class for the SettingsPage page.
@@ -35,5 +36,9 @@ export class SettingsPage {
 
   openNotificationSettings(){
     this.navCtrl.push(NotificationsettingsPage);
+  }
+
+  postSettings(){
+    this.navCtrl.push(PostsettingsPage);
   }
 }
