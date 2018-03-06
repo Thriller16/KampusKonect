@@ -28,8 +28,9 @@
 
 <ion-content class="master">
 
-  <ion-list>
-    <ion-item>
+  <ion-list no-lines>
+    <ion-item>Requests</ion-item>
+    <!-- <ion-item>
       <ion-avatar item-start>
         <img src="../../assets/imgs/genet.jpg">
       </ion-avatar>
@@ -44,7 +45,7 @@
       </ion-avatar>
       <h2>Nelson Enstein</h2>
       <p>Guy howfr...</p>
-    </ion-item>
+    </ion-item> -->
 
 <!-- 
     <ion-item>
@@ -55,6 +56,28 @@
       <p>Goodmorning</p>
     </ion-item> -->
 
+    <ion-item-sliding *ngFor="let item of myrequests">
+      <ion-item>
+        <ion-avatar>
+          <img src="{{item.photoURL}}">
+          
+        </ion-avatar>
+        <h4>{{item.displayName}}</h4>
+      </ion-item>
+
+      <ion-item-options>
+        <button ion-button color="primary" (click)="accept(item)">
+          <ion-icon name="checkmark"></ion-icon>
+          ADD
+        </button>
+
+        <button ion-button color="primary" (click)="ignore(item)">
+          <ion-icon name="trash"></ion-icon>
+          DELETE
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 
     <ion-fab bottom right>

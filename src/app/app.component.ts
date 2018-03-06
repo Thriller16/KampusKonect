@@ -24,7 +24,7 @@ import { KonektedPage } from '../pages/konekted/konekted';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
 
   pages: Array<{title: string, icon:string,component: any}>;
 
