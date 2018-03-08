@@ -14,7 +14,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
 import { PostsettingsPage } from '../pages/postsettings/postsettings';
-
+import { BuddychatPage } from '../pages/buddychat/buddychat';
 
 
 import { LoginPage } from '../pages/login/login';
@@ -35,6 +35,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { UserProvider } from '../providers/user/user';
 import { RequestsProvider } from '../providers/requests/requests';
+import { ChatsProvider } from '../providers/chats/chats';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { RequestsProvider } from '../providers/requests/requests';
     SettingsPage,
     DashboardPage,  
     PostsettingsPage,  
+    BuddychatPage,
     PrivacyPage,
     ProfilePage,
     NotificationsettingsPage,
@@ -78,6 +80,7 @@ import { RequestsProvider } from '../providers/requests/requests';
     SettingsPage,
     DashboardPage, 
     PostsettingsPage,
+    BuddychatPage,
     PrivacyPage,   
     ProfilePage,
     NotificationsettingsPage,
@@ -91,7 +94,8 @@ import { RequestsProvider } from '../providers/requests/requests';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     UserProvider,
-    RequestsProvider
+    RequestsProvider,
+    ChatsProvider
   ]
 })
 export class AppModule {}

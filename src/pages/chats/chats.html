@@ -29,7 +29,10 @@
 <ion-content class="master">
 
   <ion-list no-lines>
-    <ion-item>Requests</ion-item>
+    <ion-list-header>
+      Requests
+    </ion-list-header>
+    <!-- <ion-item>Requests</ion-item> -->
     <!-- <ion-item>
       <ion-avatar item-start>
         <img src="../../assets/imgs/genet.jpg">
@@ -60,7 +63,6 @@
       <ion-item>
         <ion-avatar>
           <img src="{{item.photoURL}}">
-          
         </ion-avatar>
         <h4>{{item.displayName}}</h4>
       </ion-item>
@@ -78,6 +80,26 @@
 
       </ion-item-options>
     </ion-item-sliding>
+
+    <ion-list-header>
+      Friends
+    </ion-list-header>
+
+    <ion-item *ngFor = "let item of myfriends" (click)="buddychat(item)">
+      <ion-avatar item-left>
+        <img src="{{item.photoURL}}">
+      </ion-avatar>
+
+      <h3>{{item.displayName}}</h3>
+    </ion-item>
+
+
+
+
+
+
+
+
   </ion-list>
 
     <ion-fab bottom right>

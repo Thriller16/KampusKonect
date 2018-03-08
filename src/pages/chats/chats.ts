@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events , AlertController} from 'ionic-angular';
+import { IonicPage, App, NavController, NavParams, Events , AlertController} from 'ionic-angular';
 import { RequestsProvider } from '../../providers/requests/requests';
+import { BuddychatPage } from '../../pages/buddychat/buddychat'
+import { ChatsProvider } from '../../providers/chats/chats';
 /**
  * Generated class for the ChatsPage page.
  *
@@ -16,20 +18,38 @@ import { RequestsProvider } from '../../providers/requests/requests';
 export class ChatsPage {
 
   myrequests;
-  constructor(public navCtrl: NavController, public requestService: RequestsProvider, public navParams: NavParams, public events: Events, public alertCtrl: AlertController) {
+  myfriends;
+
+  constructor(public navCtrl: NavController, 
+    public requestService: RequestsProvider, 
+    public navParams: NavParams, 
+    public events: Events, 
+    public alertCtrl: AlertController, 
+    public chatservice: ChatsProvider,
+    public app: App) {
     
   }
 
   ionViewWillEnter() {
+    this.requestService.getmyfriends();
+
     this.requestService.getmyrequests();
+
+
     this.events.subscribe('gotrequests', () =>{
       this.myrequests = [];
       this.myrequests = this.requestService.userdetails;
+    });
+
+    this.events.subscribe('friends', () =>{
+      this.myfriends = [];
+      this.myfriends = this.requestService.myfriends;
     });
   }
 
   ionViewDidLeave(){
     this.events.unsubscribe('gotrequests');
+    this.events.unsubscribe('friends');
   }
 
   accept(item){
@@ -50,5 +70,12 @@ export class ChatsPage {
     }).catch((err) =>{
       alert(err);
     })
+  }
+
+  buddychat(buddy){
+    this.chatservice.initializebuddy(buddy);
+    // this.navCtrl.push(BuddychatPage);
+    // this.app.getRootNav().set
+    this.app.getRootNav().setRoot(BuddychatPage);
   }
 }
