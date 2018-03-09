@@ -76,6 +76,6 @@ export class ChatsPage {
     this.chatservice.initializebuddy(buddy);
     // this.navCtrl.push(BuddychatPage);
     // this.app.getRootNav().set
-    this.app.getRootNav().setRoot(BuddychatPage);
+    this.app.getRootNav().push(BuddychatPage);
   }
 }

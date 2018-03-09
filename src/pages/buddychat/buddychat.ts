@@ -24,9 +24,9 @@ export class BuddychatPage {
   photoURL
 
   allmessages = [];
+  
 
-
-  constructor(public navCtrl: NavController, public zone: NgZone, public navParams: NavParams, public chatservice: ChatsProvider, public events: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public chatservice: ChatsProvider, public events: Events) {
     this.buddy = this.chatservice.buddy;
 
     this.scrollto();
