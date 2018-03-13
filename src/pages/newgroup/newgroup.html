@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Create group</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="profile-image" (click)="editimage()">
+    <img src="{{newgroup.groupPic}}">
+  </div>
+
+  <div>
+    <h2 (click)="editgroupname()">{{newgroup.groupName}}</h2>
+  </div>
+
+  <div>
+    Tap on pic or image tio change it
+  </div>
+
+  <div class="spacer" style="height:10px"></div>
+
+  <div>
+    <button ion-button round outline (click)="creategroup()">Create group</button>
+  </div>
+</ion-content>

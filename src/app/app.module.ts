@@ -15,7 +15,7 @@ import { PrivacyPage } from '../pages/privacy/privacy';
 import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
 import { PostsettingsPage } from '../pages/postsettings/postsettings';
 import { BuddychatPage } from '../pages/buddychat/buddychat';
-
+import { NewgroupPage } from '../pages/newgroup/newgroup';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -27,6 +27,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { File } from '@ionic-native/file'
+import { FilePath } from '@ionic-native/file-path'
+import { FileChooser } from '@ionic-native/file-chooser'
 
 // import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireModule} from 'angularfire2';
@@ -36,6 +39,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
 import { UserProvider } from '../providers/user/user';
 import { RequestsProvider } from '../providers/requests/requests';
 import { ChatsProvider } from '../providers/chats/chats';
+import { GroupsProvider } from '../providers/groups/groups';
+import { ImghandlerProvider } from '../providers/imghandler/imghandler';
+import { HubsProvider } from '../providers/hubs/hubs';
 
 
 @NgModule({
@@ -52,6 +58,7 @@ import { ChatsProvider } from '../providers/chats/chats';
     DashboardPage,  
     PostsettingsPage,  
     BuddychatPage,
+    NewgroupPage,
     PrivacyPage,
     ProfilePage,
     NotificationsettingsPage,
@@ -83,6 +90,7 @@ import { ChatsProvider } from '../providers/chats/chats';
     BuddychatPage,
     PrivacyPage,   
     ProfilePage,
+    NewgroupPage,
     NotificationsettingsPage,
     LoginPage,
     RegisterPage,
@@ -95,7 +103,13 @@ import { ChatsProvider } from '../providers/chats/chats';
     AuthProvider,
     UserProvider,
     RequestsProvider,
-    ChatsProvider
+    File,
+    FilePath,
+    FileChooser,
+    ChatsProvider,
+    GroupsProvider,
+    ImghandlerProvider,
+    HubsProvider
   ]
 })
 export class AppModule {}

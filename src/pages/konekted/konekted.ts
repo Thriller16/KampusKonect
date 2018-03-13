@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,LoadingController, AlertController} from 'ionic-angular';
+import { IonicPage, App, NavController, Events, NavParams ,LoadingController, AlertController} from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user'
+import { GroupsProvider } from '../../providers/groups/groups'
 import { RequestsProvider } from '../../providers/requests/requests'
 import { connreq } from '../../models/interfaces/request';
 import firebase from 'firebase';
+import {NewgroupPage} from '../../pages/newgroup/newgroup';
+
 /**
  * Generated class for the KonektedPage page.
  *
@@ -24,8 +27,13 @@ export class KonektedPage {
 
   temparr = [];
 
+  allmygroups;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: UserProvider, public loaddingCtrl:LoadingController, public alertCtrl: AlertController, public requestservice: RequestsProvider) {
+  constructor(public navCtrl: NavController,
+    public events: Events,
+    public groupsservice: GroupsProvider,
+    public app: App,
+     public navParams: NavParams, public userservice: UserProvider, public loaddingCtrl:LoadingController, public alertCtrl: AlertController, public requestservice: RequestsProvider) {
     let loader = this.loaddingCtrl.create({
       content: 'Loading all groups'
     });
@@ -88,5 +96,26 @@ export class KonektedPage {
       alert(err);
     })
   }
+  }
+
+  addgroup(){
+    this.app.getRootNav().push(NewgroupPage);
+    // this.navCtrl.push(NewgroupPage);
+  }
+
+  ionViewWillEnter(){
+    this.groupsservice.getmygroups();
+    this.events.subscribe('newgroup' , () =>{
+      this.allmygroups = this.groupsservice.mygroups;
+    });
+  }
+
+  ionViewWillLeave(){
+    this.events.unsubscribe('newgroup');
+  }
+
+  openchat(group){
+    // this.groupsservice.getintogroup(group.groupname);
+    // aler
   }
 }

@@ -1,7 +1,8 @@
 import { Component, NgZone, ViewChild } from '@angular/core';
-import { IonicPage, Events, NavController, NavParams, Content } from 'ionic-angular';
+import { IonicPage, Events, NavController, LoadingController, NavParams, Content } from 'ionic-angular';
 import { ChatsProvider } from '../../providers/chats/chats';
 import firebase from 'firebase';
+import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 
 /**
  * Generated class for the BuddychatPage page.
@@ -16,29 +17,36 @@ import firebase from 'firebase';
   templateUrl: 'buddychat.html',
 })
 export class BuddychatPage {
-
   @ViewChild('content') content: Content;
+
 
   buddy: any;
   newmessage;
   photoURL
-
+  imgornot;
   allmessages = [];
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public chatservice: ChatsProvider, public events: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public chatservice: ChatsProvider, public zone: NgZone, public events: Events, public imagestore: ImghandlerProvider, public loadingCtrl: LoadingController) {
     this.buddy = this.chatservice.buddy;
 
-    this.scrollto();
-
-
     this.photoURL = firebase.auth().currentUser.photoURL;
+    this.scrollto();
     this.events.subscribe('newmessage', () =>{
       this.allmessages = [];
 
-      this.allmessages = this.chatservice.buddymessages;
+      this.imgornot = [];
 
-      this.scrollto();
+      this.zone.run(() =>{
+        this.allmessages = this.chatservice.buddymessages;
+        for(var key in this.allmessages){
+          if(this.allmessages[key].substring(0, 4) == 'http'){
+            this.imgornot.push(true);
+          }else{
+            this.imgornot.push(false);
+          }
+        }
+      })
 
     });
   }
@@ -60,7 +68,22 @@ export class BuddychatPage {
     }, 1000);
   }
 
-  sendPicMsg(){
+  sendpicmsg(){
+    let loader = this .loadingCtrl.create({
+      content: "Please wait"
+    });
 
+    loader.present();
+    console.log("Loader presented waiting for new line");
+    this.imagestore.picmsgstore().then((imgurl) =>{
+      loader.dismiss();
+      this.chatservice.addnewmessage(imgurl).then(() =>{
+        this.content.scrollToBottom();
+        this.newmessage = '';
+      })
+    }).catch((err) =>{
+      // alert(err);
+      loader.dismiss();
+    })
   }
 }

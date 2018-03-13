@@ -80,8 +80,21 @@
 
       </ion-grid> -->
 
+      
+
+
       <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="search here"></ion-searchbar>
+      
+      <ion-buttons end>
+          <button ion-button (click)="addgroup()" style="margin-bottom: 16px;margin-right: 8px">
+            Add new group
+          </button>
+      </ion-buttons>
+
       <ion-list no-lines>
+        <ion-list-header>
+          All Users
+        </ion-list-header>
         <ion-list>
           <ion-item-sliding *ngFor = "let key of filteredusers" >
             <ion-item>
@@ -101,5 +114,22 @@
 
           </ion-item-sliding>
         </ion-list>
+      </ion-list>
+
+
+
+
+      <ion-list no-lines style="margin-top:10px">
+        <ion-list-header>
+          My groups
+        </ion-list-header>
+
+        <ion-item *ngFor="let item of allmygroups" (click)="openchat(group)">
+          <ion-avatar item-left>
+            <img src="item.groupimage">
+          </ion-avatar>
+
+          <h3 (click)="getintogroup()">{{item.groupname}}</h3>
+        </ion-item>
       </ion-list>
 </ion-content>

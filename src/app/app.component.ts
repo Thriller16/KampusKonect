@@ -9,6 +9,7 @@ import { InvitefriendsPage } from '../pages/invitefriends/invitefriends';
 import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import {AngularFireAuth} from 'angularfire2/auth';
 // import { Observable } from 'rxjs/Observable';
 import { TabsPage } from '../pages/tabs/tabs';
 import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
@@ -29,7 +30,9 @@ export class MyApp {
   pages: Array<{title: string, icon:string,component: any}>;
 
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, 
+    public afireAuth: AngularFireAuth,
+    public statusBar: StatusBar, public splashScreen: SplashScreen) {
 
     this.initializeApp();
 
@@ -54,6 +57,11 @@ export class MyApp {
   }
 
   openPage(page) {
+
+    if(page.title == "Logout"){
+      this.afireAuth.auth.signOut();
+      console.log("THis function is goin to log outthe above user");
+    }
     this.nav.setRoot(page.component);
   }
 }
