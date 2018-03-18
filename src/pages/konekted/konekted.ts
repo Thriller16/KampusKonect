@@ -5,6 +5,7 @@ import { GroupsProvider } from '../../providers/groups/groups'
 import { RequestsProvider } from '../../providers/requests/requests'
 import { connreq } from '../../models/interfaces/request';
 import firebase from 'firebase';
+import { GroupschatPage } from '../../pages/groupschat/groupschat';
 import {NewgroupPage} from '../../pages/newgroup/newgroup';
 
 /**
@@ -115,7 +116,7 @@ export class KonektedPage {
   }
 
   openchat(group){
-    // this.groupsservice.getintogroup(group.groupname);
-    // aler
+    this.groupsservice.getintogroup(group.groupname);
+    this.navCtrl.push('GroupschatPage', {groupName: group.groupName});
   }
 }

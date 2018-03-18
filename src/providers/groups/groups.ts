@@ -14,9 +14,14 @@ export class GroupsProvider {
 
   firegroup = firebase.database().ref('/groups');
   mygroups: Array<any> = [];
+  currentgroup: Array<any> = [];
+  currentgroupname;
+  grouppic;
 
   constructor(public events: Events) {
     console.log('Hello GroupsProvider Provider');
+    // this.mygroups.length = 25;
+
   }
 
   addgroup(newGroup){
@@ -49,13 +54,72 @@ export class GroupsProvider {
             groupimage: temp[key].groupimage
             }
 
-          this.mygroups.push(newgroup)
-            
+          this.mygroups.push(newgroup)    
           }
-
       }
 
       this.events.publish('newgroup');
+    })
+  }
+
+  getintogroup(groupname){
+    if(groupname != null){
+      this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value ', (snapshot) =>{
+        if(snapshot.val() != null){
+          var temp = snapshot.val().members;
+          this.currentgroup = [];
+
+          for(var key in temp){
+            this.currentgroup.push(temp[key]);
+          }
+          this.currentgroupname = groupname;
+          // this.events.publish('gotintogroup');
+        }
+      })
+    }
+  }
+
+  getownership(groupname){
+    var promise = new Promise((resolve, reject) => {
+      this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value', (snapshot) =>{
+        var temp = snapshot.val().owner;
+        if(temp = firebase.auth().currentUser.uid){
+          resolve(true);
+        }else{
+          resolve(false);
+        }
+      }).catch((err) =>{
+        reject(err);
+      })
+    }); 
+
+    return promise;
+  }
+
+  getgroupimage(){
+    var promise = new Promise((resolve, reject) =>{
+      this.firegroup.child(firebase.auth().currentUser.uid).child(this.currentgroupname).once('value', (snapshot) =>{
+        this.grouppic = snapshot.val().groupimage;
+
+        resolve(true);
+      })
+    })
+
+    return promise;
+  }
+
+  addmember(newmember){
+    this.firegroup.child(firebase.auth().currentUser.uid).child(this.currentgroupname).child('members').push(newmember).then(() =>{
+      this.getgroupimage().then(() =>{
+        this.firegroup.child(newmember.uid).child(this.currentgroupname).set({
+          groupimage: this.grouppic,
+          owner: firebase.auth().currentUser.uid,
+          msgboard: ''
+        }).catch((err) => {
+          console.log(err);
+        })
+      })
+      this.getintogroup(this.currentgroupname);
     })
   }
 }

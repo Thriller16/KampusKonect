@@ -12,8 +12,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import {AngularFireAuth} from 'angularfire2/auth';
 // import { Observable } from 'rxjs/Observable';
 import { TabsPage } from '../pages/tabs/tabs';
-import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
-import { KonektedPage } from '../pages/konekted/konekted';
+
 
 
 @Component({

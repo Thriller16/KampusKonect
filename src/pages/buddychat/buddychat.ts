@@ -26,9 +26,11 @@ export class BuddychatPage {
   imgornot;
   allmessages = [];
   
+  username;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public chatservice: ChatsProvider, public zone: NgZone, public events: Events, public imagestore: ImghandlerProvider, public loadingCtrl: LoadingController) {
     this.buddy = this.chatservice.buddy;
+    this.username = firebase.auth().currentUser.displayName;
 
     this.photoURL = firebase.auth().currentUser.photoURL;
     this.scrollto();
@@ -40,7 +42,8 @@ export class BuddychatPage {
       this.zone.run(() =>{
         this.allmessages = this.chatservice.buddymessages;
         for(var key in this.allmessages){
-          if(this.allmessages[key].substring(0, 4) == 'http'){
+          
+          if(this.allmessages[key].message.substring(0, 4) == 'http'){
             this.imgornot.push(true);
           }else{
             this.imgornot.push(false);
@@ -82,7 +85,7 @@ export class BuddychatPage {
         this.newmessage = '';
       })
     }).catch((err) =>{
-      // alert(err);
+      alert(err);
       loader.dismiss();
     })
   }
