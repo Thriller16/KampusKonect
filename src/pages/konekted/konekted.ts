@@ -106,15 +106,7 @@ export class KonektedPage {
       alert(err);
     })
   }
-  }
-
-  addgroup(){
-    this.app.getRootNav().push(NewgroupPage);
-  }
-
-  addhub(){
-    this.app.getRootNav().push(NewhubPage);
-  }
+}
 
   ionViewWillEnter(){
     this.groupsservice.getmygroups();

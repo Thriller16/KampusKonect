@@ -3,6 +3,9 @@ import { IonicPage, App, NavController, NavParams, Events , AlertController} fro
 import { RequestsProvider } from '../../providers/requests/requests';
 import { BuddychatPage } from '../../pages/buddychat/buddychat'
 import { ChatsProvider } from '../../providers/chats/chats';
+import { NewgroupPage } from '../../pages/newgroup/newgroup';
+import { NewhubPage } from '../../pages/newhub/newhub';
+
 /**
  * Generated class for the ChatsPage page.
  *
@@ -77,5 +80,13 @@ export class ChatsPage {
     // this.navCtrl.push(BuddychatPage);
     // this.app.getRootNav().set
     this.app.getRootNav().push(BuddychatPage);
+  }
+
+  addgroup(){
+    this.app.getRootNav().push(NewgroupPage);
+  }
+
+  addhub(){
+    this.app.getRootNav().push(NewhubPage);
   }
 }

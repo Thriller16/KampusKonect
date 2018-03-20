@@ -88,11 +88,18 @@ export class GroupsProvider {
       this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value', (snapshot) =>{
 
         var temp = snapshot.val().owner;
-        if(temp = firebase.auth().currentUser.uid){
+
+        console.log("The owner is: " + temp);
+        console.log("The current user is: " + firebase.auth().currentUser.uid);
+
+        if(temp == firebase.auth().currentUser.uid){
+          // alert("Current user is the group owner");
           resolve(true);
-          alert("Has gotten ownership of the group");
-        }else{
+        }
+
+        else{
           resolve(false);
+          // alert("Current user is not the group owner");
         }
       }).catch((err) =>{
         reject(err);
@@ -101,6 +108,7 @@ export class GroupsProvider {
 
     return promise;
   }
+
 
   getgroupimage(){
     var promise = new Promise((resolve, reject) =>{
@@ -129,5 +137,5 @@ export class GroupsProvider {
     })
   }
 
-  
+
 }

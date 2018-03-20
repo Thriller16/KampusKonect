@@ -102,9 +102,30 @@
 
   </ion-list>
 
+  <!--
     <ion-fab bottom right>
         <button ion-fab>
           <ion-icon color="light" name="md-create"></ion-icon>
         </button>
       </ion-fab>
+    -->
+
+<ion-fab bottom right >
+    <button ion-fab><ion-icon color="light" name="md-add"></ion-icon></button>
+
+  <ion-fab-list side="top">
+    <button ion-fab class="floatingbtns" (click)="addgroup()">
+        <ion-icon name="md-people"></ion-icon>
+    </button>
+  </ion-fab-list>
+
+  <ion-fab-list side="left">
+      <button ion-fab class="floatingbtns" (click)="addhub()">
+          <ion-icon name="ios-people"></ion-icon>
+      </button>
+
+  </ion-fab-list>
+
+</ion-fab>
+      
 </ion-content>

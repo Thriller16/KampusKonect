@@ -19,21 +19,20 @@ export class GroupschatPage {
   owner: boolean = false;
   groupName;
 
-  fireowner = firebase.database().ref('groups').child(firebase.auth().currentUser.uid);
   
   constructor(public navCtrl: NavController, public groupservice: GroupsProvider,public navParams: NavParams, public actionsheet: ActionSheetController) {
 
     this.groupName = this.navParams.get('groupName');
     
-    // this.groupservice.getownership(this.groupName).then((res) =>{
+    this.groupservice.getownership(this.groupName).then((res) =>{
       
-    //   if(res){
-    //     this.owner = true;
-    //     console.log("Current user is" + firebase.auth().currentUser.uid);
-    //   }
-    // }).catch((err) =>{
-    //   alert(err);
-    // })
+      if(res){
+        this.owner = true;
+        // console.log();
+      }
+    }).catch((err) =>{
+      alert(err);
+    })
 
 
   }
@@ -41,7 +40,7 @@ export class GroupschatPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupschatPage');
-    console.log("Owener is " + this.fireowner);
+    // console.log("Owener is " + this.fireowner);
   }
 
   presentOwnerSheet(){

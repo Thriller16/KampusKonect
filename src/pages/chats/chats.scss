@@ -15,7 +15,7 @@ page-chats {
     }
   
     .master{
-      background: #c3c3c3
+      background: #fff
     }
   
   
@@ -45,5 +45,10 @@ page-chats {
           font-size: 30px;
         }
       }
+    }
+
+    .floatingbtns{
+      background: color($colors, primary);
+      color: #fff;
     }
   }
