@@ -128,4 +128,6 @@ export class GroupsProvider {
       this.getintogroup(this.currentgroupname);
     })
   }
+
+  
 }
