@@ -12,6 +12,8 @@ import { LandingPage } from '../pages/landing/landing';
 import { SettingsPage } from '../pages/settings/settings';
 import { ProfilePage } from '../pages/profile/profile';
 import { PrivacyPage } from '../pages/privacy/privacy';
+import { NewhubPage } from '../pages/newhub/newhub';
+
 import { NotificationsettingsPage } from '../pages/notificationsettings/notificationsettings';
 import { PostsettingsPage } from '../pages/postsettings/postsettings';
 import { BuddychatPage } from '../pages/buddychat/buddychat';
@@ -19,7 +21,7 @@ import { NewgroupPage } from '../pages/newgroup/newgroup';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
-
+import { GroupschatPage } from '../pages/groupschat/groupschat';
 import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -51,11 +53,14 @@ import { HubsProvider } from '../providers/hubs/hubs';
     ChatsPage,
     FavoritesPage,
     InvitefriendsPage,
+    GroupschatPage,
+    NewhubPage,
     HomePage,
     ListPage,
     LandingPage,
     SettingsPage,
-    DashboardPage,  
+    DashboardPage, 
+
     PostsettingsPage,  
     BuddychatPage,
     NewgroupPage,
@@ -78,11 +83,13 @@ import { HubsProvider } from '../providers/hubs/hubs';
   entryComponents: [
     MyApp,
     KonektedPage,
+    GroupschatPage,
     ChatsPage,
     FavoritesPage,
     InvitefriendsPage,
     HomePage,
     ListPage,
+    NewhubPage,
     LandingPage,
     SettingsPage,
     DashboardPage, 

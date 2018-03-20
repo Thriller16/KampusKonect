@@ -92,6 +92,7 @@ export class NewgroupPage {
       })
       this.imagehandler.grouppicstore(this.newgroup.groupName).then((res: any) =>{
         if(res){
+          alert("Im putting in the url "+ res);
           this.newgroup.groupPic = res;
         }
       }).catch((err) =>{

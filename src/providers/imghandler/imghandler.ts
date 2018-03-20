@@ -98,20 +98,21 @@ export class ImghandlerProvider {
               var reader = new FileReader();
               reader.readAsArrayBuffer(resFile);
               reader.onloadend = (evt: any) =>{
+
                 var imgBlob = new Blob([evt.target.result], {type: 'image/jpeg'});
                 
                 var imageStore = this.firestore.ref('/groupimages').child(firebase.auth().currentUser.uid).child(groupname);
 
                 imageStore.put(imgBlob).then((res) =>{
-                  
-                  this.firestore.ref('/groupimages').child(firebase.auth().currentUser.uid).child('groupimgs').getDownloadURL().then((url) =>{
+
+                  this.firestore.ref('/groupimages').child(firebase.auth().currentUser.uid).child(groupname).getDownloadURL().then((url) =>{
+                    
                     resolve(url);
-                    // alert('Upload success');
+                    
                   }).catch((err) =>{
                     reject(err);
                   });
                 }).catch((err) =>{
-                  // alert('Upload failed' + err)  ;
                   reject(err);
                 })
               }

@@ -20,7 +20,6 @@ export class GroupsProvider {
 
   constructor(public events: Events) {
     console.log('Hello GroupsProvider Provider');
-    // this.mygroups.length = 25;
 
   }
 
@@ -63,8 +62,10 @@ export class GroupsProvider {
   }
 
   getintogroup(groupname){
+    
     if(groupname != null){
-      this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value ', (snapshot) =>{
+      this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value', (snapshot) =>{
+
         if(snapshot.val() != null){
           var temp = snapshot.val().members;
           this.currentgroup = [];
@@ -73,18 +74,23 @@ export class GroupsProvider {
             this.currentgroup.push(temp[key]);
           }
           this.currentgroupname = groupname;
-          // this.events.publish('gotintogroup');
+          this.events.publish('gotintogroup');
         }
       })
+      console.log("The groupname is: " + groupname);
     }
   }
+
+
 
   getownership(groupname){
     var promise = new Promise((resolve, reject) => {
       this.firegroup.child(firebase.auth().currentUser.uid).child(groupname).once('value', (snapshot) =>{
+
         var temp = snapshot.val().owner;
         if(temp = firebase.auth().currentUser.uid){
           resolve(true);
+          alert("Has gotten ownership of the group");
         }else{
           resolve(false);
         }

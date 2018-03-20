@@ -12,8 +12,10 @@ import { Events} from 'ionic-angular';
 export class HubsProvider {
 
   firehub = firebase.database().ref('/hubs');
-
   myhubs: Array<any> = [];
+  currenthub: Array<any> = [];
+  currenthubname;
+  hubpic;
 
 
   constructor(public events: Events) {
@@ -37,6 +39,7 @@ export class HubsProvider {
     return promise;
   }
 
+
   getmyhubs(){
     this.firehub.child(firebase.auth().currentUser.uid).on('value', (snapshot) =>{
       this.myhubs = [];
@@ -45,19 +48,83 @@ export class HubsProvider {
         var temp = snapshot.val();
         for(var key in temp){
 
-          let newHub = {
+          let newhub = {
             hubName: key,
             hubimage: temp[key].hubimage
             }
 
-          this.myhubs.push(newHub)
-            
+          this.myhubs.push(newhub)    
           }
-
       }
 
       this.events.publish('newhub');
     })
   }
 
+
+  getintohub(hubname){
+    
+    if(hubname != null){
+      this.firehub.child(firebase.auth().currentUser.uid).child(hubname).once('value', (snapshot) =>{
+
+        if(snapshot.val() != null){
+          var temp = snapshot.val().members;
+          this.currenthub = [];
+
+          for(var key in temp){
+            this.currenthub.push(temp[key]);
+          }
+          this.currenthubname = hubname;
+          this.events.publish('gitintohub');
+        }
+      })
+      console.log("The groupname is: " + hubname);
+    }
+  }
+
+  getownership(hubname){
+    var promise = new Promise((resolve, reject) => {
+      this.firehub.child(firebase.auth().currentUser.uid).child(hubname).once('value', (snapshot) =>{
+
+        var temp = snapshot.val().owner;
+
+        if(temp = firebase.auth().currentUser.uid){
+          resolve(true);
+        }else{
+          resolve(false);
+        }
+      }).catch((err) =>{
+        reject(err);
+      })
+    }); 
+
+    return promise;
+  }
+
+  gethubimage(){
+    var promise = new Promise((resolve, reject) =>{
+      this.firehub.child(firebase.auth().currentUser.uid).child(this.currenthubname).once('value', (snapshot) =>{
+        this.hubpic = snapshot.val().hubimage;
+
+        resolve(true);
+      })
+    })
+
+    return promise;
+  }
+
+  addmember(newmember){
+    this.firehub.child(firebase.auth().currentUser.uid).child(this.currenthubname).child('members').push(newmember).then(() =>{
+      this.gethubimage().then(() =>{
+        this.firehub.child(newmember.uid).child(this.currenthubname).set({
+          groupimage: this.hubpic,
+          owner: firebase.auth().currentUser.uid,
+          msgboard: ''
+        }).catch((err) => {
+          console.log(err);
+        })
+      })
+      this.getintohub(this.currenthubname);
+    })
+  }
 }

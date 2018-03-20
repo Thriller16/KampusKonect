@@ -6,7 +6,6 @@
       </button>
       <ion-title>CampusKonekt</ion-title>
 
-      <!-- Button for testing the login page -->
       <ion-buttons end>
           <button ion-button icon-only>
             <ion-icon class="icon ion-home custom-icon" name="search"></ion-icon>
@@ -91,6 +90,12 @@
           </button>
       </ion-buttons>
 
+      <ion-buttons end>
+          <button ion-button (click)="addhub()" style="margin-bottom: 16px;margin-right: 8px">
+            Add new hub
+          </button>
+      </ion-buttons>
+
       <ion-list no-lines>
         <ion-list-header>
           All Users
@@ -124,12 +129,30 @@
           My groups
         </ion-list-header>
 
-        <ion-item *ngFor="let item of allmygroups" (click)="openchat(group)">
+        <ion-item *ngFor="let item of allmygroups" (click)="opengroupchat(item)">
           <ion-avatar item-left>
-            <img src="item.groupimage">
+            <img src="{{item.groupimage}}">
           </ion-avatar>
 
-          <h3 (click)="getintogroup()">{{item.groupName}}</h3>
+          <h3>{{item.groupName}}</h3>
         </ion-item>
       </ion-list>
+
+
+
+      <ion-list no-lines style="margin-top:10px">
+        <ion-list-header>
+          My hubs
+        </ion-list-header>
+
+        <ion-item *ngFor="let item of allmyhubs" (click)="openchat(item)">
+          <ion-avatar item-left>
+            <img src="{{item.hubimage}}">
+          </ion-avatar>
+
+          <h3>{{item.hubName}}</h3>
+        </ion-item>
+      </ion-list>
+
+
 </ion-content>

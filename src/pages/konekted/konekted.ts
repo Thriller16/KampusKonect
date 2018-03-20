@@ -7,6 +7,9 @@ import { connreq } from '../../models/interfaces/request';
 import firebase from 'firebase';
 import { GroupschatPage } from '../../pages/groupschat/groupschat';
 import {NewgroupPage} from '../../pages/newgroup/newgroup';
+import { NewhubPage } from '../newhub/newhub';
+import { HubsProvider } from '../../providers/hubs/hubs';
+// import { Hu} from '../../pages/hubschatpage/hubschatpage';
 
 /**
  * Generated class for the KonektedPage page.
@@ -30,11 +33,18 @@ export class KonektedPage {
 
   allmygroups;
 
+  allmyhubs;
+
   constructor(public navCtrl: NavController,
     public events: Events,
     public groupsservice: GroupsProvider,
     public app: App,
-     public navParams: NavParams, public userservice: UserProvider, public loaddingCtrl:LoadingController, public alertCtrl: AlertController, public requestservice: RequestsProvider) {
+    public hubsservice: HubsProvider,
+     public navParams: NavParams, 
+     public userservice: UserProvider,
+      public loaddingCtrl:LoadingController, 
+      public alertCtrl: AlertController,
+       public requestservice: RequestsProvider) {
     let loader = this.loaddingCtrl.create({
       content: 'Loading all groups'
     });
@@ -44,7 +54,6 @@ export class KonektedPage {
     this.userservice.getallusers().then((res: any) =>{
       this.filteredusers = res;
       this.temparr = res;
-
       loader.dismiss();
     });
   }
@@ -101,7 +110,10 @@ export class KonektedPage {
 
   addgroup(){
     this.app.getRootNav().push(NewgroupPage);
-    // this.navCtrl.push(NewgroupPage);
+  }
+
+  addhub(){
+    this.app.getRootNav().push(NewhubPage);
   }
 
   ionViewWillEnter(){
@@ -109,14 +121,28 @@ export class KonektedPage {
     this.events.subscribe('newgroup' , () =>{
       this.allmygroups = this.groupsservice.mygroups;
     });
+
+
+    //This is the point where the hubs provider comes in
+    this.hubsservice.getmyhubs();
+    this.events.subscribe('newhub', () =>{
+      this.allmyhubs = this.hubsservice.myhubs;
+    });
+    
   }
 
   ionViewWillLeave(){
     this.events.unsubscribe('newgroup');
+    this.events.unsubscribe('newhub');
   }
 
-  openchat(group){
-    this.groupsservice.getintogroup(group.groupname);
-    this.navCtrl.push('GroupschatPage', {groupName: group.groupName});
+  opengroupchat(group){
+    this.groupsservice.getintogroup(group.groupName);
+    this.app.getRootNav().push(GroupschatPage, {groupName: group.groupName});    
+  }
+
+  openhubchat(hub){
+    this.hubsservice.getintohub(hub.hubName);
+    // this.app.getRootNav().push(Hubsc);
   }
 }

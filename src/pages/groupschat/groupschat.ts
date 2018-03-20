@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { GroupsProvider } from '../../providers/groups/groups';
-
+import firebase from 'firebase';
 /**
  * Generated class for the GroupschatPage page.
  *
@@ -18,23 +18,35 @@ export class GroupschatPage {
 
   owner: boolean = false;
   groupName;
+
+  fireowner = firebase.database().ref('groups').child(firebase.auth().currentUser.uid);
+  
   constructor(public navCtrl: NavController, public groupservice: GroupsProvider,public navParams: NavParams, public actionsheet: ActionSheetController) {
 
-    this.navParams.get('groupName');
-    this.groupservice.getownership(this.groupName).then((res) =>{
-      if(res){
-        this.owner = true;
-      }
-    }).catch((err) =>{
-      alert(err);
-    })
+    this.groupName = this.navParams.get('groupName');
+    
+    // this.groupservice.getownership(this.groupName).then((res) =>{
+      
+    //   if(res){
+    //     this.owner = true;
+    //     console.log("Current user is" + firebase.auth().currentUser.uid);
+    //   }
+    // }).catch((err) =>{
+    //   alert(err);
+    // })
+
+
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupschatPage');
+    console.log("Owener is " + this.fireowner);
   }
 
   presentOwnerSheet(){
+
+    firebase.auth().currentUser
     let sheet = this.actionsheet.create({
       title: 'Group Actions',
       buttons: [
@@ -65,6 +77,7 @@ export class GroupschatPage {
           handler: () =>{
             // this.groupservice.deletegroup();
           }
+
         },
         {
           text: 'Cancel',
