@@ -12,7 +12,12 @@ import { Events} from 'ionic-angular';
 export class HubsProvider {
 
   firehub = firebase.database().ref('/hubs');
+
+  // firedata = firebase.database().ref('/registeredusers');
+
   myhubs: Array<any> = [];
+
+  allhubs: Array<any> = [];
   currenthub: Array<any> = [];
   currenthubname;
   hubpic;
@@ -127,4 +132,31 @@ export class HubsProvider {
       this.getintohub(this.currenthubname);
     })
   }
+
+  getallhubs(){
+    this.firehub.orderByChild(firebase.auth().currentUser.uid).on('value', (snapshot) =>{
+    // this.firehub.child(firebase.auth().currentUser.uid).on('value', (snapshot) =>{
+    //  console.log('The firechild has been loaded');
+      this.allhubs = [];
+
+      if(snapshot.val() != null){
+        var temp = snapshot.val();
+
+        // console.log("The value of temp is " + temp);
+        // console.log(temp);
+        for(var key in temp){
+
+          let newhub = {
+            hubName: key,
+            hubimage: temp[key].hubimage
+            }
+
+          this.allhubs.push(newhub)
+          console.log(this.allhubs);    
+          }
+      }
+
+      this.events.publish('newhub');
+    })
+  } 
 }

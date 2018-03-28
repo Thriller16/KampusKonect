@@ -1,18 +1,72 @@
-<!--
-  Generated template for the MyprofilePage page.
+<ion-header >
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+    <ion-toolbar color="primary" align-title="left">
 
-  <ion-navbar>
-    <ion-title>myprofile</ion-title>
-  </ion-navbar>
-
-</ion-header>
+        <ion-title>My Profile</ion-title>
+  
+        <button ion-button right menuToggle>
+            <ion-icon class="icon ion-home custom-icon" name="md-more"></ion-icon>
+          </button>
+  
+      </ion-toolbar>
+  
+  </ion-header>
 
 
 <ion-content padding>
 
+  <ion-item>
+
+    <div class="profile-image" (click)="chooseimage()">
+        <img src="">
+      </div>
+    
+      <div>
+        <p align="center">EUST | Electrical Engineering</p>
+        <p align="center" style="color:#990002">Lagos, Nigeria</p>
+
+        <p>I am a passionate enterpreneur and lover of music. Do you like music? lets konekt</p>
+      </div>
+
+      <div >
+        <button style="background:#990002; color:white; float:left; padding-left:15px; padding-right:15px; padding-bottom:1px; padding-top:1px" ion-button round outline>Edit Profile</button>
+        <button style="background:#990002; color:white; float:right; padding-left:15px;padding-right:15px; padding-bottom:1px; padding-top:1px" ion-button round outline>Konektions 23k</button>
+      </div>
+    
+    </ion-item>
+
+    <ion-item>
+      <p>Birthday</p>
+      <p>July 12</p>      
+    </ion-item>
+
+    <ion-item>
+        <p>Gender</p>
+        <p>Male</p>      
+    </ion-item>
+      
+    <ion-item>
+        <p>Relationship Status</p>
+        <p>Single</p>      
+    </ion-item>
+
+    <ion-item>
+        <p>City</p>
+        <p>Lagos</p>      
+    </ion-item>
+
+    <ion-item>
+        <p>Country</p>
+        <p>Nigeria</p>      
+    </ion-item>
+
+    <ion-item>
+        <p>Name of Institution</p>
+        <p>Enugu State University of Nigeria</p>      
+    </ion-item>
+
+    <ion-item>
+        <p>Course of Study</p>
+        <p>Electrical Engineering</p>      
+    </ion-item>
 </ion-content>

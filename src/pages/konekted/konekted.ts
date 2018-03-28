@@ -33,7 +33,10 @@ export class KonektedPage {
 
   allmygroups;
 
-  allmyhubs;
+  allhubs;
+
+  filteredhubs = [];
+  
 
   constructor(public navCtrl: NavController,
     public events: Events,
@@ -45,6 +48,8 @@ export class KonektedPage {
       public loaddingCtrl:LoadingController, 
       public alertCtrl: AlertController,
        public requestservice: RequestsProvider) {
+
+
     let loader = this.loaddingCtrl.create({
       content: 'Loading all groups'
     });
@@ -56,6 +61,17 @@ export class KonektedPage {
       this.temparr = res;
       loader.dismiss();
     });
+
+
+    //This will load all hubs
+    // this.hubsservice.getallhubs().then((res:any) =>{
+    //   // console.log(res);
+    //   // this.filteredhubs = res;
+    //   // console.log(this.filteredhubs);
+    //   console.log('Hubs have been loaded');
+    // })
+
+
   }
 
   searchuser(searchbar){
@@ -116,9 +132,10 @@ export class KonektedPage {
 
 
     //This is the point where the hubs provider comes in
-    this.hubsservice.getmyhubs();
+    this.hubsservice.getallhubs();
     this.events.subscribe('newhub', () =>{
-      this.allmyhubs = this.hubsservice.myhubs;
+      this.allhubs = this.hubsservice.allhubs;
+      // console.log(this.allhubs);
     });
     
   }

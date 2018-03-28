@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 // import { SettingsPage} from '../pages/settings/settings'
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -9,6 +9,8 @@ import { InvitefriendsPage } from '../pages/invitefriends/invitefriends';
 import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { MyprofilePage } from '../pages/myprofile/myprofile';
+
 import {AngularFireAuth} from 'angularfire2/auth';
 // import { Observable } from 'rxjs/Observable';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -31,6 +33,7 @@ export class MyApp {
 
   constructor(public platform: Platform, 
     public afireAuth: AngularFireAuth,
+    public app: App,
     public statusBar: StatusBar, public splashScreen: SplashScreen) {
 
     this.initializeApp();
@@ -62,5 +65,12 @@ export class MyApp {
       console.log("THis function is goin to log outthe above user");
     }
     this.nav.setRoot(page.component);
+  }
+
+  openprofile(){
+    // this.nav.setRoot();
+    // this.nav.setRoot(MyprofilePage);
+    // this.app.getRootNav().push(MyprofilePage);
+    // this.nav.push(MyprofilePage);
   }
 }

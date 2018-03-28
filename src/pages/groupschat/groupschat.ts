@@ -60,7 +60,7 @@ export class GroupschatPage {
           text: 'Remove member',
           icon: 'remove-circle',
           handler: () =>{
-            this.navCtrl.push('GroupbuddiesPage')
+            this.navCtrl.push('GroupmembersPage')
           }
         },
         {
@@ -74,7 +74,9 @@ export class GroupschatPage {
           text: 'Delete Group',
           icon: 'trash',
           handler: () =>{
-            // this.groupservice.deletegroup();
+            this.groupservice.deletegroup().then(() =>{
+              this.navCtrl.pop();
+            });
           }
 
         },
@@ -100,7 +102,11 @@ export class GroupschatPage {
           text: 'Leave Group',
           icon: 'log-out',
           handler: () =>{
-            this.navCtrl.push('GroupbuddiesPage');
+            this.groupservice.leavegroup().then(() =>{
+              this.navCtrl.pop();
+            }).catch((err) =>{
+              alert(err);
+            })
           }
         },
         {

@@ -22,6 +22,8 @@ import { NewgroupPage } from '../pages/newgroup/newgroup';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GroupschatPage } from '../pages/groupschat/groupschat';
+import { MyprofilePage } from '../pages/myprofile/myprofile';
+
 import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -57,6 +59,7 @@ import { HubsProvider } from '../providers/hubs/hubs';
     NewhubPage,
     HomePage,
     ListPage,
+    MyprofilePage,
     LandingPage,
     SettingsPage,
     DashboardPage, 
@@ -94,6 +97,7 @@ import { HubsProvider } from '../providers/hubs/hubs';
     SettingsPage,
     DashboardPage, 
     PostsettingsPage,
+    MyprofilePage,
     BuddychatPage,
     PrivacyPage,   
     ProfilePage,

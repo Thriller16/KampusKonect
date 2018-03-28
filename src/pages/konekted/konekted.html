@@ -26,8 +26,8 @@
 </ion-header>
 
 <ion-content color="primary">
-<!--
 
+  <!--
       <ion-grid>
 
         <ion-row>
@@ -35,25 +35,28 @@
           <ion-col>
             <p style="padding-left:20px; font-size:17px">Contacts</p>
 
-              <ion-item>
-                  <ion-avatar style="zoom:150%"  item-start>
-                    <img src="../../assets/imgs/banky.png">
+            <ion-list>
+              <ion-item *ngFor = "let key of filteredusers">
+                <ion-avatar style="zoom:150%"  item-start>
+                  <img src="{{key.photoURL}}">
+                  <p style="font-size:5px">{{key.displayName}}</p>
+                </ion-avatar>
+
+
+                <ion-avatar style="zoom:150%"  item-start>
+                    <img src="../../assets/imgs/genet.jpg">
                   </ion-avatar>
 
-
                   <ion-avatar style="zoom:150%"  item-start>
-                      <img src="../../assets/imgs/genet.jpg">
+                      <img src="../../assets/imgs/banky.png">
                     </ion-avatar>
 
-                    <ion-avatar style="zoom:150%"  item-start>
-                        <img src="../../assets/imgs/banky.png">
+                    <ion-avatar style="zoom:150%" item-start>
+                        <img src="../../assets/imgs/genet.jpg">
                       </ion-avatar>
-
-                      <ion-avatar style="zoom:150%" item-start>
-                          <img src="../../assets/imgs/genet.jpg">
-                        </ion-avatar>
-                </ion-item>
-
+              </ion-item>
+            </ion-list>
+              
                 <p style="padding-left:20px; font-size:17px">Nearby</p>
                 <ion-item>
                     <ion-avatar style="zoom:150%"  item-start>
@@ -73,14 +76,13 @@
                             <img src="../../assets/imgs/genet.jpg">
                           </ion-avatar>
                   </ion-item>
+                
           </ion-col>
 
         </ion-row>
 
-      </ion-grid> -->
-
-      
-
+      </ion-grid>
+    -->
 
       <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="search here"></ion-searchbar>
 
@@ -125,6 +127,32 @@
           <h3>{{item.groupName}}</h3>
         </ion-item>
       </ion-list>
+
+
+      <ion-list no-lines>
+        <ion-list-header>
+          All Hubs
+        </ion-list-header>
+        <ion-list>
+          <ion-item-sliding *ngFor = "let key of allhubs" >
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="{{key.hubimage}}">
+              </ion-avatar>
+              <h2>{{key.hubName}}</h2>
+            </ion-item>
+
+            <ion-item-options slide="left">
+              <button ion-button color="primary" (click)="sendreq(key)">
+                <ion-icon name="person-add"></ion-icon>
+                Add
+              </button>
+            </ion-item-options>
+
+          </ion-item-sliding>
+        </ion-list>
+      </ion-list>
+
 
 
 
